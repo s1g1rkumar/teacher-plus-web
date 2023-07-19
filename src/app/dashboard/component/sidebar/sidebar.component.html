@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Dashboard
+  </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor="let menu of menus">
+      <a [routerLink]="menu.router_link" class="links" routerLinkActive="active">
+        <div class="flex gap align_center">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon={{menu.icon}}></mat-icon>
+          <p>{{menu.name}}</p>
+        </div>
+      </a>
+    </div>
+  </mat-card-content>
+</mat-card>

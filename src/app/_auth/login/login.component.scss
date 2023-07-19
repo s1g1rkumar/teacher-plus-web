@@ -1,0 +1,32 @@
+.login_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .mat-mdc-card {
+    min-width: 25rem;
+    text-align: start;
+  }
+
+  .mat-mdc-card-content {
+    margin-top: 1rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      grid-area: 0.5rem;
+      input {
+        width: 100%;
+      }
+
+      .submit_btns {
+        text-align: right;
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.23rem;
+      }
+    }
+
+  }
+}

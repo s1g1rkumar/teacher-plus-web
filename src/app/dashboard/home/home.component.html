@@ -1,0 +1,117 @@
+<div class="home_container">
+  <div *ngIf="loading;else content;">
+    <app-loading [height]="'80vh'" [diameter]="50"></app-loading>
+  </div>
+  <ng-template #content>
+    <div class="head">
+
+      <mat-card *ngIf="user.role === 1 || user.role ===2">
+        <mat-card-header>
+          <mat-card-subtitle>
+            User
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{total_user}}</h2>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-subtitle>
+            Behaviorist Approach
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{total_behaviorist}}</h2>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-subtitle>
+            Model Constructivist Approach
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{total_constructivist}}</h2>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-subtitle>
+            Experiential Learning Approach
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{total_experiential}}</h2>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+
+
+    <div class="body">
+      <div class="lesson_plan">
+        <p style="margin: 0.5rem 0;">
+          Lesson plans
+        </p>
+        <div class="lesson_plan_box">
+          <div *ngFor="let lesson_plan of lesson_plans">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-subtitle class="lesson_plan_subtitle">
+                  {{lesson_plan?.title}}
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <!-- Type:{{lesson_plan.resource_type}} -->
+                <p>Date: {{dateFormat(lesson_plans.createdAt,'ll')}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="user.role === 1 || user.role ===2">
+        <p style="margin: 0.5rem 0;">
+          Users
+        </p>
+        <table mat-table [dataSource]="userData" class="mat-elevation-z8">
+          <ng-container matColumnDef="pic">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element">
+              <img mat-card-avatar src={{element.profile.picture}} alt="pic" style="margin: 0;">
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.profile.name}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="contact_number">
+            <th mat-header-cell *matHeaderCellDef>Contact number </th>
+            <td mat-cell *matCellDef="let element"> {{element.profile.contact_number}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef>Gender</th>
+            <td mat-cell *matCellDef="let element"> {{element.profile?.gender}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="created_date">
+            <th mat-header-cell *matHeaderCellDef>Created date </th>
+            <td mat-cell *matCellDef="let element"> {{dateFormat(element.createdAt,'ll')}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="UserDisplayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: UserDisplayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </ng-template>
+</div>

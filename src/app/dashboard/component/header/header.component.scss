@@ -1,0 +1,24 @@
+.mat-mdc-card {
+  .mat-mdc-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      img {
+        width: 8rem;
+      }
+    }
+
+    .right {
+      .profile {
+        .profile_data {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+}

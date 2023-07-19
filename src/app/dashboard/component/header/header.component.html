@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-content>
+    <div class="left">
+      <img src="../../../../assets//images//logo tp.svg" alt="logo">
+    </div>
+    <div class="right">
+      <div class="profile">
+        <button mat-button [matMenuTriggerFor]="p_menu">
+          <div class="profile_data">
+            <img mat-card-avatar src={{profilePic}} alt="pic" style="margin: 0;">
+            <p>{{userName}}</p>
+          </div>
+        </button>
+        <mat-menu #p_menu="matMenu">
+
+          <button mat-menu-item [routerLink]="'/home'"><mat-icon aria-hidden="false" aria-label="Example home icon"
+              fontIcon="home"></mat-icon>Home</button>
+          <button mat-menu-item [routerLink]="'/users'" *ngIf="user.role === 1 || user.role === 2"><mat-icon
+              aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>User details</button>
+
+          <button mat-menu-item [routerLink]="'/lesson-plan'"><mat-icon aria-hidden="false"
+              aria-label="Example home icon" fontIcon="library_books"></mat-icon>Lesson plan</button>
+          <button mat-menu-item [routerLink]="'/evaluate'"><mat-icon aria-hidden="false" aria-label="Example home icon"
+              fontIcon="data_exploration"></mat-icon>Evaluate</button>
+
+          <!-- <button mat-menu-item [routerLink]="'/report'" *ngIf="user.role === 1 || user.role === 2"><mat-icon
+              aria-hidden="false" aria-label="Example home icon" fontIcon="summarize"></mat-icon>Report</button>
+          <button mat-menu-item [routerLink]="'/access-control'" *ngIf="user.role === 1 || user.role === 2"><mat-icon
+              aria-hidden="false" aria-label="Example home icon" fontIcon="settings"></mat-icon>Access control</button> -->
+          <button mat-menu-item [routerLink]="'/profile'"><mat-icon aria-hidden="false" aria-label="Example home icon"
+              fontIcon="badge"></mat-icon>Profile</button>
+          <button mat-menu-item (click)="logoutSubmit()"><mat-icon aria-hidden="false" aria-label="Example home icon"
+              fontIcon="logout"></mat-icon>Logout</button>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

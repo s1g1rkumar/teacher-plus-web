@@ -1,0 +1,52 @@
+<div class="profile">
+  <div *ngIf="loading;else content;">
+    <app-loading [height]="'80vh'" [diameter]="50"></app-loading>
+  </div>
+  <ng-template #content>
+    <mat-card>
+      <mat-card-content>
+        <div class="profile_data">
+          <img src={{data.profile.picture}} alt="pic">
+          <div style="text-align: center;">
+            <input type="file" (change)="profileUpdate($event)">
+          </div>
+        </div>
+        <div class="profile_data_info">
+          <div class="info">
+            <h4>Name</h4>
+            <h4>Role</h4>
+            <h4>Email</h4>
+            <h4>Contact number</h4>
+            <h4>Gender</h4>
+            <h4>Location</h4>
+            <h4>Website</h4>
+          </div>
+          <div class="info_data">
+            <p>: {{data.profile.name}}</p>
+            <p>: {{roleFormat(data.role)}}</p>
+            <p>: {{data.email}}</p>
+            <p>: {{data.profile.contact_number}}</p>
+            <p>: {{data.profile.gender}}</p>
+            <p>: {{data.profile.location}}</p>
+            <p>: {{data.profile?.website || "N/A"}}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+</div>

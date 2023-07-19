@@ -1,0 +1,194 @@
+<div class="container">
+  <div style="display: flex;align-items: center;justify-content: space-between;">
+    <h3>Behaviorist Approach</h3>
+    <button mat-raised-button (click)="back()" color="primary">Back</button>
+  </div>
+  <br>
+  <mat-accordion class="example-headers-align">
+    <form (ngSubmit)="addFormSubmit()" [formGroup]="addForm">
+      <mat-card>
+        <mat-card-title>
+          Basic details
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Name of school</mat-label>
+              <input type="text" formControlName="school" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Class</mat-label>
+              <mat-select formControlName="classNumber">
+                <mat-option value="1">I</mat-option>
+                <mat-option value="2">II</mat-option>
+                <mat-option value="3">III</mat-option>
+                <mat-option value="4">IV</mat-option>
+                <mat-option value="5">V</mat-option>
+                <mat-option value="6">VI</mat-option>
+                <mat-option value="7">VII</mat-option>
+                <mat-option value="8">VII</mat-option>
+                <mat-option value="9">IX</mat-option>
+                <mat-option value="10">X</mat-option>
+              </mat-select>
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Subject</mat-label>
+              <input type="text" formControlName="subject" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Book name</mat-label>
+              <input type="text" formControlName="book" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Topic</mat-label>
+              <input type="text" formControlName="topic" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Duration</mat-label>
+              <input type="text" formControlName="duration" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-title>
+          Objectives
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>General Objective</mat-label>
+              <textarea type="text" formControlName="general_objective" matInput required></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Learning objective</mat-label>
+              <textarea type="text" formControlName="learning_objective" matInput required></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Pre Reading</mat-label>
+              <input type="text" formControlName="pre_reading" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card formGroupName="testing_previous">
+        <mat-card-title>
+          Testing previous knowledge
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Teacher's Activity</mat-label>
+              <input type="text" formControlName="teacher_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Expected Student Activity</mat-label>
+              <input type="text" formControlName="expected_student_activity" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card formGroupName="listening_comprehension">
+        <mat-card-title>
+          Learning Comprehension
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Teacher's Activity</mat-label>
+              <input type="text" formControlName="teacher_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Student Activity</mat-label>
+              <input type="text" formControlName="student_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Learning Outcomes</mat-label>
+              <input type="text" formControlName="learner_outcome" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card formGroupName="aloud_reading">
+        <mat-card-title>
+          Aloud Reading
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Teacher's Activity</mat-label>
+              <input type="text" formControlName="teacher_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Student Activity</mat-label>
+              <input type="text" formControlName="student_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Learning Outcomes</mat-label>
+              <input type="text" formControlName="learner_outcome" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card formGroupName="silent_reading">
+        <mat-card-title>
+          Silent Reading
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Teacher's Activity</mat-label>
+              <input type="text" formControlName="teacher_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Student Activity</mat-label>
+              <input type="text" formControlName="student_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Learning Outcomes</mat-label>
+              <input type="text" formControlName="learner_outcome" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card formGroupName="word_exposition">
+        <mat-card-title>
+          Word Exposition
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Teacher's Activity</mat-label>
+              <input type="text" formControlName="teacher_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Student Activity</mat-label>
+              <input type="text" formControlName="student_activity" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Learning Outcomes</mat-label>
+              <input type="text" formControlName="learner_outcome" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="btns">
+        <button mat-stroked-button type="reset" color="primary">reset</button>
+        <button mat-raised-button type="submit"  color="primary">Submit</button>
+      </div>
+    </form>
+
+    <mat-card *ngIf="message">
+      <mat-card-title>
+        {{message}}
+      </mat-card-title>
+    </mat-card>
+  </mat-accordion>
+</div>

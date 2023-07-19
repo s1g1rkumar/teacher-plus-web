@@ -1,0 +1,45 @@
+@import '../../../styles.scss';
+
+
+.container {
+  color: $textColor;
+
+  .mat-mdc-card {
+    padding: 1rem;
+
+    .info {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 1rem;
+    }
+
+    .info_left,
+    .info_right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      div {
+        p {
+          &:last-child {
+            font-weight: 600;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  .table_info {
+      width: 100%;
+  }
+  table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 0.23rem;
+    }
+
+}

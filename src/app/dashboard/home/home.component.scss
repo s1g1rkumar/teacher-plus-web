@@ -1,0 +1,25 @@
+.head{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+  gap: 1rem;
+}
+.body{
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  .lesson_plan{
+    .lesson_plan_box{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      .lesson_plan_subtitle{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 15rem;
+        overflow: hidden;
+      }
+    }
+
+  }
+}

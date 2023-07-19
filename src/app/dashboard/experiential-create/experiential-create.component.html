@@ -1,0 +1,116 @@
+<div class="container">
+  <div style="display: flex;align-items: center;justify-content: space-between;">
+    <h3>Experiential Approach</h3>
+    <button mat-raised-button (click)="back()" color="primary">Back</button>
+  </div>
+
+  <br>
+  <mat-accordion class="example-headers-align">
+    <form [formGroup]="addForm" (ngSubmit)="addFormSubmit()">
+      <mat-card>
+        <mat-card-title>
+          Basic details
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Name of school</mat-label>
+              <input type="text" formControlName="school" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Class</mat-label>
+              <mat-select formControlName="classNumber">
+                <mat-option value="1">I</mat-option>
+                <mat-option value="2">II</mat-option>
+                <mat-option value="3">III</mat-option>
+                <mat-option value="4">IV</mat-option>
+                <mat-option value="5">V</mat-option>
+                <mat-option value="6">VI</mat-option>
+                <mat-option value="7">VII</mat-option>
+                <mat-option value="8">VII</mat-option>
+                <mat-option value="9">IX</mat-option>
+                <mat-option value="10">X</mat-option>
+              </mat-select>
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Subject</mat-label>
+              <input type="text" formControlName="subject" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Book name</mat-label>
+              <input type="text" formControlName="book" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Topic</mat-label>
+              <input type="text" formControlName="topic" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Duration</mat-label>
+              <input type="text" formControlName="duration" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-title>
+          Objectives
+        </mat-card-title>
+        <mat-card-content>
+          <div class="form_field">
+            <mat-form-field appearance="outline">
+              <mat-label>Learning Outcomes</mat-label>
+              <textarea  formControlName="learningOutcome" type="text" matInput required></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Learning Resource/ICT tool</mat-label>
+              <input type="text" formControlName="learningResourcesICTTool" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Prerequisite Knowledge</mat-label>
+              <input type="text" formControlName="prerequisiteKnowledge" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Content (Key point)</mat-label>
+              <textarea type="text" formControlName="content" matInput required></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Learning context</mat-label>
+              <input type="text" formControlName="learningContext" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Teaching Learning Process</mat-label>
+              <input type="text" formControlName="teachingLearningProcess" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Experience (Engage,Explore,Experience)</mat-label>
+              <input type="text" formControlName="experienceEngageExplore" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Reflect (Share Reflect pon the Experience)</mat-label>
+              <input type="text" formControlName="reflectShare" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Conceptualize (Concept Formation. Meta Cognition)</mat-label>
+              <input type="text" formControlName="conceptFormation" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Apply</mat-label>
+              <input type="text" formControlName="apply" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Extended Activity</mat-label>
+              <input type="text" formControlName="extendedActivity" matInput required>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="btns">
+        <button mat-stroked-button type="reset" color="primary">reset</button>
+        <button mat-raised-button type="submit" color="primary">Submit</button>
+      </div>
+    </form>
+  </mat-accordion>
+</div>

@@ -1,0 +1,26 @@
+@import '../../../../styles.scss';
+.mat-mdc-card {
+  height: 89.8vh;
+  .mat-mdc-card-header {
+    margin-bottom: 1rem;
+  }
+
+  .mat-mdc-card-content {
+    .links{
+      text-decoration: none;
+      color: $textColor;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      border-radius: 0.30rem;
+      &:hover{
+        background-color: $dodgeBlue;
+        color: $polar;
+      }
+    }
+    .active{
+      background-color: $dodgeBlue;
+        color: $polar;
+    }
+  }
+}
